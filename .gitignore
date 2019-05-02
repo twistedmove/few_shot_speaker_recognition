@@ -1,1 +1,3 @@
 data/temp/
+pre_trained/*.pth
+*/__pycache__
