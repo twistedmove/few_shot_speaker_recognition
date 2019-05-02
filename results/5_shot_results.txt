@@ -1,0 +1,22 @@
+Iteration:  0
+{'loss': 0.38307842969894407, 'accuracy': 0.88}
+Iteration:  1
+{'loss': 0.3810823178291321, 'accuracy': 0.82}
+Iteration:  2
+{'loss': 0.3720707941055298, 'accuracy': 0.88}
+Iteration:  3
+{'loss': 0.298125114440918, 'accuracy': 0.9}
+Iteration:  4
+{'loss': 0.36111055374145506, 'accuracy': 0.86}
+Iteration:  5
+{'loss': 0.289893479347229, 'accuracy': 0.9}
+Iteration:  6
+{'loss': 0.2869612979888916, 'accuracy': 0.94}
+Iteration:  7
+{'loss': 0.3511988067626953, 'accuracy': 0.82}
+Iteration:  8
+{'loss': 0.3226922917366028, 'accuracy': 0.88}
+Iteration:  9
+{'loss': 0.2822140741348267, 'accuracy': 0.92}
+Average loss over 10 iterations is 0.33284271597862247.
+Average accuracy over 10 iterations is 0.8800000000000001.
