@@ -1,0 +1,67 @@
+{
+    "name": "res34_5_shot_64_dim_embedding_fft_128",
+    "n_gpu": 1,
+    "input_size": [1, 128, 300],
+    "num_test_classes":5,
+    "num_iter_test": 10,
+    
+    "arch": {
+        "type": "resnet34",
+        "args": {
+        }
+    },
+    
+    "data_loader": {
+        "type": "SpeechDataLoader_query",
+        "args":{
+            "batch_size": 8,
+            "num_workers": 6
+        }
+    },
+    "optimizer": {
+        "type": "Adam",
+        "args":{
+            "lr": 0.001,
+            "weight_decay": 0,
+            "amsgrad": true
+        }
+    },
+    "loss": "prototypical_loss",
+    "metrics": [
+        "accuracy"
+    ],
+    "lr_scheduler": {
+        "type": "ReduceLROnPlateau",
+        "args": {
+            "mode": "max",
+            "patience": 10,
+            "factor": 0.1,
+            "verbose": true,
+            "threshold_mode": "abs"
+        }
+    },
+    "trainer": {
+        "epochs": 150,
+        "save_dir": "saved/",
+        "save_period": 1,
+        "verbosity": 2,
+        
+        "monitor": "max val_my_metric",
+        "early_stop": 22,
+        
+        "tensorboardX": false,
+        "log_dir": "saved/runs"
+    },
+    "signal_processing": {
+        "SAMPLE_RATE": 16000,
+        "PREEMPHASIS_ALPHA": 0.97,
+        "FRAME_LEN": 0.025,
+        "FRAME_STEP": 0.01,
+        "NUM_FFT": 128,
+        "BUCKET_STEP": 1,
+        "MAX_SEC": 3                
+    },
+    "dataset": {
+        "split_list": "data/vid_list.csv"
+    }
+}
